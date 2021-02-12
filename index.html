@@ -168,6 +168,19 @@
             <div class="p-3" id="result-is-a-number"></div>
         </div>
 
+        <div class="container bg-secondary text-light">
+            <div class="p-3">
+                <label for="is-email" class="form-label">Input some text</label>
+                <input type="text" class="form-control" id="is-email" />
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-is-email">
+                    Is it an email?
+                </button>
+            </div>
+            <div class="p-3" id="result-is-email"></div>
+        </div>
+
         <script>
             function inputToNumber(elementID) {
                 let inp = document.getElementById(elementID);
@@ -180,7 +193,7 @@
                 return val;
             }
 
-            function calculeazaSalariuBrut(numar) {
+            function computeGrossSalary(numar) {
                 numar = parseFloat(numar);
                 return parseInt(numar * 0.45);
             }
@@ -193,7 +206,7 @@
                     let salariu = inputToNumber("gross-salary");
 
                     const rez = document.getElementById("result-gross-salary");
-                    rez.innerText = calculeazaSalariuBrut(salariu);
+                    rez.innerText = computeGrossSalary(salariu);
                 });
 
             document
@@ -260,6 +273,81 @@
                     document.getElementById(
                         "result-to-capitalize"
                     ).innerText = capitalizare(text1, text2);
+                });
+
+            document
+                .getElementById("compute-is-a-number")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let text = document.getElementById("is-a-number").value;
+                    let result = true;
+                    const numbers = "0123456789()+-.,";
+
+                    for (let i = 0; i < text.length; i++) {
+                        if (numbers.indexOf(text[i]) < 0) {
+                            result = false;
+                        }
+                    }
+
+                    let rez = document.getElementById("result-is-a-number");
+                    if (result) {
+                        rez.innerText = "Input is a number!";
+                    } else {
+                        rez.innerText = "Input is NOT a number!";
+                    }
+                });
+
+            function validateEmail(text) {
+                let result = true;
+                let foundat = 0;
+                let founddot = 0;
+
+                for (let i = 0; i < text.length; i++) {
+                    if (text[i] === "@") {
+                        foundat += 1;
+                        if (i === 0) {
+                            result = false;
+                        }
+                        if (i === text.length - 1) {
+                            result = false;
+                        }
+                    }
+
+                    if (text[i] === ".") {
+                        founddot += 1;
+                        if (i === 0) {
+                            result = false;
+                        }
+                        if (i === text.length - 1) {
+                            result = false;
+                        }
+                        if (text[i - 1] === "@") {
+                            result = false;
+                        }
+                    }
+                }
+
+                if (foundat !== 1) {
+                    return false;
+                }
+                if (founddot !== 1) {
+                    return false;
+                }
+                return result;
+            }
+
+            document
+                .getElementById("compute-is-email")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let text = document.getElementById("is-email").value;
+                    let rez = document.getElementById("result-is-email");
+
+                    if (validateEmail(text)) {
+                        rez.innerText = "Input is a valid email!";
+                    } else {
+                        rez.innerText = "Input is NOT a valid email!";
+                    }
                 });
         </script>
     </body>
