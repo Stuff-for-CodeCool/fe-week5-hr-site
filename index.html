@@ -11,9 +11,28 @@
             integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
             crossorigin="anonymous"
         />
+        <style>
+            .container:nth-child(2n) {
+                color: #f8f9fa !important;
+                background: url("https://images.squarespace-cdn.com/content/v1/5d39b86b4c1e5c000178e981/1565602700688-V8KAWRQQMQCPM5QGVA1E/ke17ZwdGBToddI8pDm48kGkUaBjg8-yeaqRydMZx6JB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z4YTzHvnKhyp6Da-NYroOW3ZGjoBKy3azqku80C789l0hveExjbswnAj1UrRPScjfAgbHzjazpaGVq7xTzTe12-KRynurKZRTACv-Np8iXoqw/HR.jpg");
+            }
+
+            .table {
+                caption-side: bottom;
+                width: 100%;
+                margin-bottom: 1rem;
+                vertical-align: top;
+                border-color: #dee2e6;
+                border-collapse: collapse;
+            }
+
+            .container:nth-child(2n) .table {
+                color: #f8f9fa !important;
+            }
+        </style>
     </head>
     <body>
-        <div class="container">
+        <div class="container rounded-3">
             <div class="p-3">
                 <label class="form-label" for="gross-salary"
                     >Gross salary</label
@@ -28,7 +47,7 @@
             <div id="result-gross-salary" class="p-3"></div>
         </div>
 
-        <div class="container bg-secondary text-light">
+        <div class="container rounded-3">
             <div class="p-3">
                 <label for="number-1" class="form-label">Number 1</label
                 ><input type="number" id="number-1" class="form-control" />
@@ -57,7 +76,7 @@
             <div class="p-3" id="number-sum"></div>
         </div>
 
-        <div class="container">
+        <div class="container rounded-3">
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -108,27 +127,31 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="p-3">
-                <label class="form-label" for="index-1">Starting from:</label>
-                <input
-                    class="form-control"
-                    type="number"
-                    id="index-1"
-                    min="1"
-                    max="10"
-                    value="1"
-                />
-            </div>
-            <div class="p-3">
-                <label class="form-label" for="index-2">Up to:</label>
-                <input
-                    class="form-control"
-                    type="number"
-                    id="index-2"
-                    min="1"
-                    max="10"
-                    value="10"
-                />
+            <div class="row">
+                <div class="p-3 col-6">
+                    <label class="form-label" for="index-1"
+                        >Starting from:</label
+                    >
+                    <input
+                        class="form-control"
+                        type="number"
+                        id="index-1"
+                        min="1"
+                        max="10"
+                        value="1"
+                    />
+                </div>
+                <div class="p-3 col-6">
+                    <label class="form-label" for="index-2">Up to:</label>
+                    <input
+                        class="form-control"
+                        type="number"
+                        id="index-2"
+                        min="1"
+                        max="10"
+                        value="10"
+                    />
+                </div>
             </div>
             <div class="p-3">
                 <button class="btn btn-primary" id="compute-salary-index">
@@ -138,12 +161,22 @@
             <div class="p-3" id="result-salary-index"></div>
         </div>
 
-        <div class="container bg-secondary text-light">
-            <div class="p-3">
-                <input type="text" class="form-control" id="to-capitalize-1" />
-            </div>
-            <div class="p-3">
-                <input type="text" class="form-control" id="to-capitalize-2" />
+        <div class="container rounded-3">
+            <div class="row">
+                <div class="p-3 col-6">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="to-capitalize-1"
+                    />
+                </div>
+                <div class="p-3 col-6">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="to-capitalize-2"
+                    />
+                </div>
             </div>
             <div class="p-3">
                 <button class="btn btn-primary" id="capitalize">
@@ -153,7 +186,7 @@
             <div class="p-3" id="result-to-capitalize"></div>
         </div>
 
-        <div class="container">
+        <div class="container rounded-3">
             <div class="p-3">
                 <label for="is-a-number" class="form-label"
                     >Input some text</label
@@ -168,7 +201,7 @@
             <div class="p-3" id="result-is-a-number"></div>
         </div>
 
-        <div class="container bg-secondary text-light">
+        <div class="container rounded-3">
             <div class="p-3">
                 <label for="is-email" class="form-label">Input some text</label>
                 <input type="text" class="form-control" id="is-email" />
@@ -179,6 +212,57 @@
                 </button>
             </div>
             <div class="p-3" id="result-is-email"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <div class="row">
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-1" />
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-2" />
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-3" />
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-4" />
+                </div>
+                <div class="p-3 col-2">
+                    <input type="number" class="form-control" id="find-max-5" />
+                </div>
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-find-max">
+                    Find maximum
+                </button>
+            </div>
+            <div class="p-3" id="result-find-max"></div>
+        </div>
+
+        <div class="container rounded-3">
+            <ul>
+                <li>Levi Campos</li>
+                <li>Phyllis Duncan</li>
+                <li>Alexandra Cummings</li>
+                <li>Ruth Martin</li>
+                <li>Charissa Kinney</li>
+                <li>Jared Noel</li>
+                <li>Mark Osborne</li>
+                <li>Knox Mcfadden</li>
+                <li>Macey Massey</li>
+                <li>David Mcdonald</li>
+            </ul>
+            <div class="p-3">
+                <label for="contains-filter" class="form-label">Filter:</label
+                ><input type="text" class="form-control" id="contains-filter" />
+            </div>
+            <div class="p-3">
+                <button class="btn btn-primary" id="compute-contains-filter">
+                    Find all matching inputs
+                </button>
+            </div>
+            <ul id="contains-output"></ul>
         </div>
 
         <script>
@@ -348,6 +432,67 @@
                     } else {
                         rez.innerText = "Input is NOT a valid email!";
                     }
+                });
+
+            function maxInList(list) {
+                let max = -10000;
+
+                for (let i = 0; i < list.length; i++) {
+                    if (list[i] >= max) {
+                        max = list[i];
+                    }
+                }
+                return max;
+            }
+
+            document
+                .getElementById("compute-find-max")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let list = [];
+
+                    for (let i = 1; i < 6; i++) {
+                        list.push(inputToNumber("find-max-" + i));
+                    }
+
+                    document.getElementById(
+                        "result-find-max"
+                    ).innerText = maxInList(list);
+                });
+
+            function filterList(list, check) {
+                let out = [];
+
+                for (let i = 0; i < list.length; i++) {
+                    const name = list[i].innerText;
+                    check = check.toLowerCase();
+
+                    if (name.indexOf(check) > -1) {
+                        out.push(name);
+                    }
+                }
+
+                return out;
+            }
+
+            document
+                .getElementById("compute-contains-filter")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    let list = document.getElementsByTagName("li");
+
+                    let filtered = filterList(
+                        list,
+                        document.getElementById("contains-filter").value
+                    );
+
+                    let out = "";
+                    for (let i = 0; i < filtered.length; i++) {
+                        out += "<li>" + filtered[i] + "</li>";
+                    }
+
+                    document.getElementById("contains-output").innerHTML = out;
                 });
         </script>
     </body>
