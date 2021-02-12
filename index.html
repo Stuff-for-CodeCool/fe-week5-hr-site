@@ -1,12 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HR Website</title>
-</head>
-<body>
-    
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>HR Website</title>
+    </head>
+    <body>
+        <fieldset>
+            <p>
+                <label for="salariu-brut">Salariu brut</label>
+                <input type="text" id="salariu-brut" />
+            </p>
+            <p>
+                <button id="calculeaza-salariu-brut">
+                    Calculeaza salariul brut
+                </button>
+            </p>
+            <p id="rezultat-salariu-brut"></p>
+        </fieldset>
+
+        <fieldset>
+            <p>
+                <label for="numar-1">Numar 1:</label>
+                <input type="number" id="numar-1" />
+            </p>
+            <p>
+                <label for="numar-2">Numar 2:</label>
+                <input type="number" id="numar-2" />
+            </p>
+            <p>
+                <label for="numar-3">Numar 3:</label>
+                <input type="number" id="numar-3" />
+            </p>
+            <p>
+                <label for="numar-4">Numar 4:</label>
+                <input type="number" id="numar-4" />
+            </p>
+            <p>
+                <label for="numar-5">Numar 5:</label>
+                <input type="number" id="numar-5" />
+            </p>
+            <p>
+                <button id="calculeaza-suma-numerelor">
+                    Calculeaza suma numerelor
+                </button>
+            </p>
+            <p id="suma-numerelor"></p>
+        </fieldset>
+
+        <fieldset>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Nume</th>
+                        <th>Salariu</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Chaim X. Mayo</td>
+                        <td>9218</td>
+                    </tr>
+                    <tr>
+                        <td>Virginia X. Greer</td>
+                        <td>8441</td>
+                    </tr>
+                    <tr>
+                        <td>Elaine R. Robbins</td>
+                        <td>6197</td>
+                    </tr>
+                    <tr>
+                        <td>Erich R. Avila</td>
+                        <td>6965</td>
+                    </tr>
+                    <tr>
+                        <td>Kennan F. Callahan</td>
+                        <td>5449</td>
+                    </tr>
+                    <tr>
+                        <td>Julie W. Clayton</td>
+                        <td>4792</td>
+                    </tr>
+                    <tr>
+                        <td>Micah X. Larsen</td>
+                        <td>7849</td>
+                    </tr>
+                    <tr>
+                        <td>Byron S. Dorsey</td>
+                        <td>7633</td>
+                    </tr>
+                    <tr>
+                        <td>Barry E. Walls</td>
+                        <td>8535</td>
+                    </tr>
+                    <tr>
+                        <td>Mufutau M. Ortiz</td>
+                        <td>3601</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p>
+                <label for="index-1">De la:</label>
+                <input type="number" id="index-1" min="1" max="10" value="1" />
+                <label for="index-2">Pana la:</label>
+                <input type="number" id="index-2" min="1" max="10" value="10" />
+            </p>
+            <p>
+                <button id="calculeaza-salariu-index">
+                    Calculeaza salariul de la indici
+                </button>
+            </p>
+            <p id="rezultat-salariu-index"></p>
+        </fieldset>
+
+        <fieldset>
+            <p>
+                <input type="text" id="de-capitalizat-1" /><input
+                    type="text"
+                    id="de-capitalizat-2"
+                />
+            </p>
+            <p><button id="capitalize">Capitalizeaza</button></p>
+            <p id="rezultat-de-capitalizat"></p>
+        </fieldset>
+
+        <script>
+            function inputToNumber(elementID) {
+                let inp = document.getElementById(elementID);
+                let val = parseInt(inp.value);
+
+                if (isNaN(val)) {
+                    return 0;
+                }
+
+                return val;
+            }
+
+            function calculeazaSalariuBrut(numar) {
+                numar = parseFloat(numar);
+                return parseInt(numar * 0.45);
+            }
+
+            document
+                .getElementById("calculeaza-salariu-brut")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    let salariu = inputToNumber("salariu-brut");
+
+                    const rez = document.getElementById(
+                        "rezultat-salariu-brut"
+                    );
+                    rez.innerText = calculeazaSalariuBrut(salariu);
+                });
+
+            document
+                .getElementById("calculeaza-suma-numerelor")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let suma = 0;
+
+                    for (let i = 1; i <= 5; i++) {
+                        let n = inputToNumber("numar-" + i);
+                        suma = suma + n;
+                    }
+
+                    document.getElementById("suma-numerelor").innerText = suma;
+                });
+
+            document
+                .getElementById("calculeaza-salariu-index")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+                    let from = inputToNumber("index-1");
+                    let until = inputToNumber("index-2");
+
+                    let suma = 0;
+                    for (
+                        let i = Math.min(from, until);
+                        i <= Math.max(from, until);
+                        i++
+                    ) {
+                        let rand = document.getElementsByTagName("tr")[i];
+                        let valoare = rand.getElementsByTagName("td")[1];
+                        valoare = valoare.innerText;
+                        valoare = parseInt(valoare);
+
+                        suma += valoare;
+                    }
+
+                    document.getElementById(
+                        "rezultat-salariu-index"
+                    ).innerText = suma;
+                });
+
+            function capitalizare(text1, text2) {
+                let t1 =
+                    text1.toUpperCase().slice(0, 1) +
+                    text1.toLowerCase().slice(1);
+                let t2 =
+                    text2.toUpperCase().slice(0, 1) +
+                    text2.toLowerCase().slice(1);
+
+                return t1 + " " + t2;
+            }
+
+            document
+                .getElementById("capitalize")
+                .addEventListener("click", (e) => {
+                    e.preventDefault();
+
+                    let text1 = document.getElementById("de-capitalizat-1")
+                        .value;
+                    let text2 = document.getElementById("de-capitalizat-2")
+                        .value;
+
+                    document.getElementById(
+                        "rezultat-de-capitalizat"
+                    ).innerText = capitalizare(text1, text2);
+                });
+        </script>
+    </body>
 </html>
