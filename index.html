@@ -34,8 +34,14 @@
     <body>
         <div class="container rounded-3">
             <div class="p-3">
-                <label class="form-label" for="gross-salary">Gross salary</label>
-                <input class="form-control" type="text" id="gross-salary">
+                In an input, add the gross salary; on click on the button,
+                display the net salary, as an integer.
+            </div>
+            <div class="p-3">
+                <label class="form-label" for="gross-salary"
+                    >Gross salary</label
+                >
+                <input class="form-control" type="text" id="gross-salary" />
             </div>
             <div class="p-3">
                 <button id="compute-gross-salary" class="btn btn-primary">
@@ -47,19 +53,27 @@
 
         <div class="container rounded-3">
             <div class="p-3">
-                <label for="number-1" class="form-label">Number 1</label><input type="number" id="number-1" class="form-control">
+                Given 5 inputs, compute their sum on click on the button.
             </div>
             <div class="p-3">
-                <label for="number-2" class="form-label">Number 2</label><input type="number" id="number-2" class="form-control">
+                <label for="number-1" class="form-label">Number 1</label
+                ><input type="number" id="number-1" class="form-control" />
             </div>
             <div class="p-3">
-                <label for="number-3" class="form-label">Number 3</label><input type="number" id="number-3" class="form-control">
+                <label for="number-2" class="form-label">Number 2</label
+                ><input type="number" id="number-2" class="form-control" />
             </div>
             <div class="p-3">
-                <label for="number-4" class="form-label">Number 4</label><input type="number" id="number-4" class="form-control">
+                <label for="number-3" class="form-label">Number 3</label
+                ><input type="number" id="number-3" class="form-control" />
             </div>
             <div class="p-3">
-                <label for="number-5" class="form-label">Number 5</label><input type="number" id="number-5" class="form-control">
+                <label for="number-4" class="form-label">Number 4</label
+                ><input type="number" id="number-4" class="form-control" />
+            </div>
+            <div class="p-3">
+                <label for="number-5" class="form-label">Number 5</label
+                ><input type="number" id="number-5" class="form-control" />
             </div>
             <div class="p-3">
                 <button id="compute-number-sum" class="btn btn-primary">
@@ -70,6 +84,10 @@
         </div>
 
         <div class="container rounded-3">
+            <div class="p-3">
+                Given a table and two inputs, compute the sum of the salaries
+                between the indices specified in the two inputs.
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>
@@ -122,12 +140,28 @@
             </table>
             <div class="row">
                 <div class="p-3 col-6">
-                    <label class="form-label" for="index-1">Starting from:</label>
-                    <input class="form-control" type="number" id="index-1" min="1" max="10" value="1">
+                    <label class="form-label" for="index-1"
+                        >Starting from:</label
+                    >
+                    <input
+                        class="form-control"
+                        type="number"
+                        id="index-1"
+                        min="1"
+                        max="10"
+                        value="1"
+                    />
                 </div>
                 <div class="p-3 col-6">
                     <label class="form-label" for="index-2">Up to:</label>
-                    <input class="form-control" type="number" id="index-2" min="1" max="10" value="10">
+                    <input
+                        class="form-control"
+                        type="number"
+                        id="index-2"
+                        min="1"
+                        max="10"
+                        value="10"
+                    />
                 </div>
             </div>
             <div class="p-3">
@@ -139,12 +173,23 @@
         </div>
 
         <div class="container rounded-3">
+            <div class="p-3">
+                Given 2 inputs, capitalize the texts inside and join them.
+            </div>
             <div class="row">
                 <div class="p-3 col-6">
-                    <input type="text" class="form-control" id="to-capitalize-1">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="to-capitalize-1"
+                    />
                 </div>
                 <div class="p-3 col-6">
-                    <input type="text" class="form-control" id="to-capitalize-2">
+                    <input
+                        type="text"
+                        class="form-control"
+                        id="to-capitalize-2"
+                    />
                 </div>
             </div>
             <div class="p-3">
@@ -157,8 +202,14 @@
 
         <div class="container rounded-3">
             <div class="p-3">
-                <label for="is-a-number" class="form-label">Input some text</label>
-                <input type="text" class="form-control" id="is-a-number">
+                Given an input, determine whether the text is a number or not
+                (text is strictly one of "0 1 2 3 4 5 6 7 8 9 ( ) , . + -")
+            </div>
+            <div class="p-3">
+                <label for="is-a-number" class="form-label"
+                    >Input some text</label
+                >
+                <input type="text" class="form-control" id="is-a-number" />
             </div>
             <div class="p-3">
                 <button class="btn btn-primary" id="compute-is-a-number">
@@ -170,8 +221,12 @@
 
         <div class="container rounded-3">
             <div class="p-3">
+                Given an input, determine whether the text is a valid email
+                address.
+            </div>
+            <div class="p-3">
                 <label for="is-email" class="form-label">Input some text</label>
-                <input type="text" class="form-control" id="is-email">
+                <input type="text" class="form-control" id="is-email" />
             </div>
             <div class="p-3">
                 <button class="btn btn-primary" id="compute-is-email">
@@ -182,21 +237,24 @@
         </div>
 
         <div class="container rounded-3">
+            <div class="p-3">
+                Given 5 inputs, find the largest one on click.
+            </div>
             <div class="row">
                 <div class="p-3 col-2">
-                    <input type="number" class="form-control" id="find-max-1">
+                    <input type="number" class="form-control" id="find-max-1" />
                 </div>
                 <div class="p-3 col-2">
-                    <input type="number" class="form-control" id="find-max-2">
+                    <input type="number" class="form-control" id="find-max-2" />
                 </div>
                 <div class="p-3 col-2">
-                    <input type="number" class="form-control" id="find-max-3">
+                    <input type="number" class="form-control" id="find-max-3" />
                 </div>
                 <div class="p-3 col-2">
-                    <input type="number" class="form-control" id="find-max-4">
+                    <input type="number" class="form-control" id="find-max-4" />
                 </div>
                 <div class="p-3 col-2">
-                    <input type="number" class="form-control" id="find-max-5">
+                    <input type="number" class="form-control" id="find-max-5" />
                 </div>
             </div>
             <div class="p-3">
@@ -208,6 +266,10 @@
         </div>
 
         <div class="container rounded-3">
+            <div class="p-3">
+                Given a list and an input field, find all list items which
+                contain the text in the input.
+            </div>
             <ul class="list-group p-3 text-dark">
                 <li class="list-group-item">Levi Campos</li>
                 <li class="list-group-item">Phyllis Duncan</li>
@@ -221,7 +283,8 @@
                 <li class="list-group-item">David Mcdonald</li>
             </ul>
             <div class="p-3">
-                <label for="contains-filter" class="form-label">Filter:</label><input type="text" class="form-control" id="contains-filter">
+                <label for="contains-filter" class="form-label">Filter:</label
+                ><input type="text" class="form-control" id="contains-filter" />
             </div>
             <div class="p-3">
                 <button class="btn btn-primary" id="compute-contains-filter">
